@@ -2,7 +2,6 @@
 Hanna Hermsen and Melvin Gerritsen
 
 Repository link: https://github.com/hannahermsen-ns/orange_belt_2
-It's private so feel free to send Hanna a message.
 
 ## Run the Text Fixture from Command-Line
 
