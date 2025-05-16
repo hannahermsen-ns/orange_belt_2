@@ -1,7 +1,8 @@
 package com.gildedrose
 
-class GildedRose(var items: List<Item>) {
-
+class GildedRose(
+    var items: List<Item>,
+) {
     companion object {
         private const val MAX_QUALITY_SCORE = 50
         private const val BACKSTAGE_SELL_IN_THRESHOLD_FOR_TRIPLE_INCREASE = 5
@@ -65,10 +66,8 @@ class GildedRose(var items: List<Item>) {
     }
 
     fun increaseQualityIfPossible(item: Item) {
-        if (item.quality < MAX_QUALITY_SCORE) {// magic number
+        if (item.quality < MAX_QUALITY_SCORE) { // magic number
             item.quality = item.quality + 1
         }
     }
-
 }
-
