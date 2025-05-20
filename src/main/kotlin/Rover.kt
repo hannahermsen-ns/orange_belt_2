@@ -15,7 +15,7 @@ class Rover {
         // primitive obsession (not a string but a list of enum values representing the commands)
         for (instruction in instructions) {
             when (instruction) { // switch statement
-                'L' -> { // primitive obsession, unclear naming
+                'L' -> { // primitive obsession
                     when (rs.dd) { // too many levels of indentation, bad indentation, switch statement, feature envy
                         'E' -> rs.dd = 'N'
                         'N' -> rs.dd = 'W'
@@ -42,11 +42,11 @@ class Rover {
         executeInstructions(z.toString())
     }
 
-    // unclear naming, feature envy
-    val xyd: String
+    // feature envy
+    val roverStateString: String
         get() = "${rs.xx} ${rs.yy} ${rs.dd}"
 
-    fun pos(): String = xyd
+    fun pos(): String = roverStateString
 
     constructor() : this("")
 
