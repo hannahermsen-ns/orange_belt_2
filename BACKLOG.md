@@ -12,5 +12,6 @@ Code smell solving plan:
    3. Solve unclear naming in constructor itself X
    4. Rename go function name X
    5. Rename go function parameter name X
+   6. Rename c variable in the executeInstructions method X
 2. Reduce size of the go method (reduce complexity, as per the refactoring priority premise)
 3. Reduce duplication of switch statements checking the commands (reduce complexity, as per the refactoring priority premise)

@@ -13,8 +13,8 @@ class Rover {
 
     fun executeInstructions(instructions: String) { // long method
         // primitive obsession (not a string but a list of enum values representing the commands)
-        for (c in instructions) { // Unclear naming
-            when (c) { // switch statement
+        for (instruction in instructions) {
+            when (instruction) { // switch statement
                 'L' -> { // primitive obsession, unclear naming
                     when (rs.dd) { // too many levels of indentation, bad indentation, switch statement, feature envy
                         'E' -> rs.dd = 'N'
