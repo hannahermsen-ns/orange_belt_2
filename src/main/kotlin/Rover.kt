@@ -66,11 +66,7 @@ class Rover {
         executeInstructions(z.toString())
     }
 
-    // feature envy
-    val roverStateString: String
-        get() = "${roverState.x} ${roverState.y} ${roverState.orientation}"
-
-    fun pos(): String = roverStateString
+    fun pos(): String = roverState.toString()
 
     constructor() : this("")
 
@@ -81,4 +77,6 @@ class RoverState {
     var x: Int = 0 // primitive obsession
     var y: Int = 0 // primitive obsession
     var orientation: Char = 'N' // primitive obsession
+
+    override fun toString() = "$x $y $orientation"
 }
