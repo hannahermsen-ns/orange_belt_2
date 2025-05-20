@@ -11,7 +11,7 @@ class Rover {
         }
     }
 
-    fun go(cms: String) { // unclear naming (cms and go), long method
+    fun executeCommands(cms: String) { // unclear naming (cms), long method
         // primitive obsession (not a string but a list of enum values representing the commands)
         for (c in cms) { // Unclear naming
             when (c) { // switch statement
@@ -39,7 +39,7 @@ class Rover {
     }
 
     fun g(z: Char) {
-        go(z.toString())
+        executeCommands(z.toString())
     }
 
     // unclear naming, feature envy
