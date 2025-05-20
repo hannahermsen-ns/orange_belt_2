@@ -17,3 +17,9 @@ Unfortunately we couldn't find the code for the mars rover project so we had to 
 
 Pomodoro 4:
 Identify code smells.
+
+Pomodoro 5:
+Solve renaming code smells
+
+Pomodoro 6:
+Solve renaming + complexity + feature envy code smells
