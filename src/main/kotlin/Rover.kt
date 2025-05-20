@@ -11,9 +11,9 @@ class Rover {
         }
     }
 
-    fun executeCommands(cms: String) { // unclear naming (cms), long method
+    fun executeInstructions(instructions: String) { // long method
         // primitive obsession (not a string but a list of enum values representing the commands)
-        for (c in cms) { // Unclear naming
+        for (c in instructions) { // Unclear naming
             when (c) { // switch statement
                 'L' -> { // primitive obsession, unclear naming
                     when (rs.dd) { // too many levels of indentation, bad indentation, switch statement, feature envy
@@ -39,7 +39,7 @@ class Rover {
     }
 
     fun g(z: Char) {
-        executeCommands(z.toString())
+        executeInstructions(z.toString())
     }
 
     // unclear naming, feature envy
