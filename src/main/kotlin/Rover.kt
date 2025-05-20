@@ -5,9 +5,9 @@ class Rover {
         val startingPosition = rawPositionData.split(' ')
         if (startingPosition.size >= 3) {
             // primitive obsession, feature envy, data clump?,
-            rs.xx = startingPosition[0].toInt()
-            rs.yy = startingPosition[1].toInt()
-            rs.dd = startingPosition[2][0]
+            roverState.xx = startingPosition[0].toInt()
+            roverState.yy = startingPosition[1].toInt()
+            roverState.dd = startingPosition[2][0]
         }
     }
 
@@ -16,22 +16,22 @@ class Rover {
         for (instruction in instructions) {
             when (instruction) { // switch statement
                 'L' -> { // primitive obsession
-                    when (rs.dd) { // too many levels of indentation, bad indentation, switch statement, feature envy
-                        'E' -> rs.dd = 'N'
-                        'N' -> rs.dd = 'W'
-                        'W' -> rs.dd = 'S'
-                        'S' -> rs.dd = 'E'
+                    when (roverState.dd) { // too many levels of indentation, bad indentation, switch statement, feature envy
+                        'E' -> roverState.dd = 'N'
+                        'N' -> roverState.dd = 'W'
+                        'W' -> roverState.dd = 'S'
+                        'S' -> roverState.dd = 'E'
                     }
                 }
                 'R' -> {
-                    when (rs.dd) {
+                    when (roverState.dd) {
                         // using the same when in multiple places (duplicated code)
-                        'E' -> rs.dd = 'S' 'S' -> rs.dd = 'W' 'W' -> rs.dd = 'N' 'N' -> rs.dd = 'E'
+                        'E' -> roverState.dd = 'S' 'S' -> roverState.dd = 'W' 'W' -> roverState.dd = 'N' 'N' -> roverState.dd = 'E'
                     }
                 }
                 'M' -> {
-                    when (rs.dd) {
-                        'E' -> rs.xx++ 'S' -> rs.yy-- 'W' -> rs.xx-- 'N' -> rs.yy++
+                    when (roverState.dd) {
+                        'E' -> roverState.xx++ 'S' -> roverState.yy-- 'W' -> roverState.xx-- 'N' -> roverState.yy++
                     }
                 }
             }
@@ -44,13 +44,13 @@ class Rover {
 
     // feature envy
     val roverStateString: String
-        get() = "${rs.xx} ${rs.yy} ${rs.dd}"
+        get() = "${roverState.xx} ${roverState.yy} ${roverState.dd}"
 
     fun pos(): String = roverStateString
 
     constructor() : this("")
 
-    private var rs = RoverState() // Unclear naming
+    private var roverState = RoverState() // Unclear naming
 }
 
 class RoverState {
