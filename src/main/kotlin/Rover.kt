@@ -1,8 +1,8 @@
 package org.example
 
 class Rover {
-    constructor(p: String) { // Unclear naming
-        val s = p.split(' ') // Unclear naming
+    constructor(startingPosition: String) { // primitive obsession
+        val s = startingPosition.split(' ') // Unclear naming
         if (s.size >= 3) {
             // primitive obsession, feature envy, data clump?,
             rs.xx = s[0].toInt()
@@ -11,7 +11,7 @@ class Rover {
         }
     }
 
-    fun go(cms: String) { // unclear naming (cms and go),
+    fun go(cms: String) { // unclear naming (cms and go), long method
         // primitive obsession (not a string but a list of enum values representing the commands)
         for (c in cms) { // Unclear naming
             when (c) { // switch statement
@@ -25,6 +25,7 @@ class Rover {
                 }
                 'R' -> {
                     when (rs.dd) {
+                        // using the same when in multiple places (duplicated code)
                         'E' -> rs.dd = 'S' 'S' -> rs.dd = 'W' 'W' -> rs.dd = 'N' 'N' -> rs.dd = 'E'
                     }
                 }
