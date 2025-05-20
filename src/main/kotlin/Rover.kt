@@ -14,16 +14,22 @@ class Rover {
     fun executeInstructions(instructions: String) {
         // primitive obsession (not a string but a list of enum values representing the commands)
         for (instruction in instructions) {
-            when (instruction) { // switch statement
-                'L' -> { // primitive obsession
-                    handleLeftInstruction()
-                }
-                'R' -> {
-                    handleRightInstruction()
-                }
-                'M' -> {
-                    handleMoveInstruction()
-                }
+            handleInstruction(instruction)
+        }
+    }
+
+    private fun handleInstruction(instruction: Char) {
+        when (instruction) { // switch statement
+            'L' -> { // primitive obsession
+                handleLeftInstruction()
+            }
+
+            'R' -> {
+                handleRightInstruction()
+            }
+
+            'M' -> {
+                handleMoveInstruction()
             }
         }
     }

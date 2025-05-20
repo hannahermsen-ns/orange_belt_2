@@ -18,5 +18,5 @@ Code smell solving plan:
    9. Rename members of RoverState X
 2. Reduce size of the executeInstructions method (reduce complexity, as per the refactoring priority premise)
    3. Extract handling instructions for each possible direction X
-   4. Extract logic that handles an instruction to a separate function
+   4. Extract logic that handles an instruction to a separate function X
 3. Reduce duplication of switch statements checking the commands (reduce complexity, as per the refactoring priority premise)
