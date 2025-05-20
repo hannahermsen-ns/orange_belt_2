@@ -5,9 +5,9 @@ class Rover {
         val startingPosition = rawPositionData.split(' ')
         if (startingPosition.size >= 3) {
             // primitive obsession, feature envy, data clump?,
-            roverState.xx = startingPosition[0].toInt()
-            roverState.yy = startingPosition[1].toInt()
-            roverState.dd = startingPosition[2][0]
+            roverState.x = startingPosition[0].toInt()
+            roverState.y = startingPosition[1].toInt()
+            roverState.orientation = startingPosition[2][0]
         }
     }
 
@@ -16,22 +16,22 @@ class Rover {
         for (instruction in instructions) {
             when (instruction) { // switch statement
                 'L' -> { // primitive obsession
-                    when (roverState.dd) { // too many levels of indentation, bad indentation, switch statement, feature envy
-                        'E' -> roverState.dd = 'N'
-                        'N' -> roverState.dd = 'W'
-                        'W' -> roverState.dd = 'S'
-                        'S' -> roverState.dd = 'E'
+                    when (roverState.orientation) { // too many levels of indentation, bad indentation, switch statement, feature envy
+                        'E' -> roverState.orientation = 'N'
+                        'N' -> roverState.orientation = 'W'
+                        'W' -> roverState.orientation = 'S'
+                        'S' -> roverState.orientation = 'E'
                     }
                 }
                 'R' -> {
-                    when (roverState.dd) {
+                    when (roverState.orientation) {
                         // using the same when in multiple places (duplicated code)
-                        'E' -> roverState.dd = 'S' 'S' -> roverState.dd = 'W' 'W' -> roverState.dd = 'N' 'N' -> roverState.dd = 'E'
+                        'E' -> roverState.orientation = 'S' 'S' -> roverState.orientation = 'W' 'W' -> roverState.orientation = 'N' 'N' -> roverState.orientation = 'E'
                     }
                 }
                 'M' -> {
-                    when (roverState.dd) {
-                        'E' -> roverState.xx++ 'S' -> roverState.yy-- 'W' -> roverState.xx-- 'N' -> roverState.yy++
+                    when (roverState.orientation) {
+                        'E' -> roverState.x++ 'S' -> roverState.y-- 'W' -> roverState.x-- 'N' -> roverState.y++
                     }
                 }
             }
@@ -44,17 +44,17 @@ class Rover {
 
     // feature envy
     val roverStateString: String
-        get() = "${roverState.xx} ${roverState.yy} ${roverState.dd}"
+        get() = "${roverState.x} ${roverState.y} ${roverState.orientation}"
 
     fun pos(): String = roverStateString
 
     constructor() : this("")
 
-    private var roverState = RoverState() // Unclear naming
+    private var roverState = RoverState()
 }
 
 class RoverState {
-    var xx: Int = 0 // Unclear naming
-    var yy: Int = 0 // Unclear naming
-    var dd: Char = 'N' // Unclear naming
+    var x: Int = 0 // primitive obsession
+    var y: Int = 0 // primitive obsession
+    var orientation: Char = 'N' // primitive obsession
 }

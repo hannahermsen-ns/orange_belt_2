@@ -14,7 +14,7 @@ Code smell solving plan:
    5. Rename go function parameter name X
    6. Rename c variable in the executeInstructions method X
    7. Rename xyd instance variable X
-   8. Rename rs variable
-   9. Rename members of RoverState
+   8. Rename rs variable X
+   9. Rename members of RoverState X
 2. Reduce size of the go method (reduce complexity, as per the refactoring priority premise)
 3. Reduce duplication of switch statements checking the commands (reduce complexity, as per the refactoring priority premise)
