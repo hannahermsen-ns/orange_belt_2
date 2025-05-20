@@ -16,4 +16,4 @@ We solved those and then read the mars rover assignment in detail.
 Unfortunately we couldn't find the code for the mars rover project so we had to spend some time finding out where it is.
 
 Pomodoro 4:
-Identify code smells
+Identify code smells.
