@@ -1,13 +1,13 @@
 package org.example
 
 class Rover {
-    constructor(startingPosition: String) { // primitive obsession
-        val s = startingPosition.split(' ') // Unclear naming
-        if (s.size >= 3) {
+    constructor(rawPositionData: String) { // primitive obsession
+        val startingPosition = rawPositionData.split(' ')
+        if (startingPosition.size >= 3) {
             // primitive obsession, feature envy, data clump?,
-            rs.xx = s[0].toInt()
-            rs.yy = s[1].toInt()
-            rs.dd = s[2][0]
+            rs.xx = startingPosition[0].toInt()
+            rs.yy = startingPosition[1].toInt()
+            rs.dd = startingPosition[2][0]
         }
     }
 
